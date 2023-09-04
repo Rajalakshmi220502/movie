@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Ticket Booking</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Movie Ticket Booking</h1>
+    </header>
+   
+    <main>
+        <section id="movies">
+            <h2>Recent Tamil Movies</h2>
+            <div class="movie" id="movie1">
+                <h3>Master</h3>
+                <p class="info">A thrilling action movie with a star-studded cast.</p>
+                <button onclick="showShowtimes('movie1')">Showtimes</button>
+                <div class="showtimes" id="showtimes1">
+                    <h4>Showtimes:</h4>
+                    <ul>
+                        <li>10:00 AM</li>
+                        <li>1:00 PM</li>
+                        <li>4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="movie" id="movie2">
+                <h3>Kadaikutty Singam</h3>
+                <p class="info">A heartwarming family drama set in a village backdrop.</p>
+                <button onclick="showShowtimes('movie2')">Showtimes</button>
+                <div class="showtimes" id="showtimes2">
+                    <h4>Showtimes:</h4>
+                    <ul>
+                        <li>11:00 AM</li>
+                        <li>2:00 PM</li>
+                        <li>5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+       
+        <section id="booking">
+            <h2>Booking</h2>
+            <div id="booking-form">
+                <label for="movie">Select a movie:</label>
+                <select id="movie" onchange="showShowtimes(this.value)">
+                    <option value="movie1">Master</option>
+                    <option value="movie2">Kadaikutty Singam</option>
+                </select>
+                <label for="showtime">Select a showtime:</label>
+                <select id="showtime">
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                </select>
+                <label for="seat">Select a seat:</label>
+                <input type="number" id="seat" placeholder="Seat number">
+                <button onclick="bookTicket()">Book Ticket</button>
+                <p id="booking-result"></p>
+            </div>
+        </section>    </main>
